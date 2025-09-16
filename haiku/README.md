@@ -14,7 +14,9 @@ Then I ran the following command to generate the audio file:
 say - "I want to sleep. Swat the files. Softly, please." -o haiku.aiff
 
 All the codes I found from the class Git&Shell folder.
+After saving the aiff audio, I opened GitHub desktop and wrote the summary, push to origin.
+
 ##The problems I faced
-I had some confusion of saving the terminal and how to push the git and write the reflection.
+I had some confusion of saving the terminal and how to push the git and write the reflection. Also, I had confusion of how to push the files on GitHub.
 ## How I overcame them
-I asked to my friends to solve these problems and also I asked to GPT which code should I use to save. (I didn't used GPT for my reflection.)
+My upper semester EPD student helped me to solve these problems by giving the file of steps how to push the file.
