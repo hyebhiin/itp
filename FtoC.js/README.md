@@ -3,8 +3,8 @@
 I created the equation code from javascript.
 ## How I made it
 I created two variables, f to c by saying "let" .
- I wrote console.log(f + "°F is equal to " + c.toFixed(2) + "°C");
- It gives "99°F is equal to 37.22°C".
+ I wrote console.log(f + "Ferenheit is equal to " + c.toFixed(2) + "celsius");
+ It gives "99Ferenheit is equal to 37.22celsius."
  
  I reffered the codealong file.
 
