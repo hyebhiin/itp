@@ -14,7 +14,7 @@ Phase 4: I divided the canvas into a grid and used that grid to tile the tree ac
 ## The problems I faced
 Firstly, the trees were keep overlapped. In Phase 4, when I tried to tile the trees, they were overlapping each other. This happened because the triangles in the tree were too big or didn’t fit properly in the grid cells.
 
-Secondly, adjusting the grid size was hard. It was challenging to calculate the correct grid cell size and make sure the trees fit perfectly inside each cell.
+Secondly, adjusting the grid size was hard. It was challenging to calculate the correct grid cell size and make sure the trees fit perfectly inside each cell. I took most of time to figure out this
 ## How I overcame them
 I adjusted the size of the trees and made sure there was enough space between them. I used the scale() function to make the trees fit within the grid cells. I also added some space between each tree by adjusting the positions of the trees slightly.
 
