@@ -22,6 +22,10 @@ Phase 4: I divided the canvas into a grid and used that grid to tile the tree ac
 
 <img width="390" height="405" alt="Screenshot 2025-10-21 at 9 19 17 AM" src="https://github.com/user-attachments/assets/ea136108-e5a9-4247-82e8-a4847ea38a84" />
 
+I referenced from the class 04Control flow codealongs, which is <img width="516" height="258" alt="Screenshot 2025-10-21 at 9 38 11 AM" src="https://github.com/user-attachments/assets/bd727dac-e553-4a67-9dc1-39c9af985bf8" />
+This helped me a lot to figure out phase4
+
+
 
 ## The problems I faced
 Firstly, the trees were keep overlapped. In Phase 4, when I tried to tile the trees, they were overlapping each other. This happened because the triangles in the tree were too big or didn’t fit properly in the grid cells.
