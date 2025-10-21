@@ -18,4 +18,4 @@ Secondly, adjusting the grid size was hard. It was challenging to calculate the 
 ## How I overcame them
 I adjusted the size of the trees and made sure there was enough space between them. I used the scale() function to make the trees fit within the grid cells. I also added some space between each tree by adjusting the positions of the trees slightly.
 
-I carefully calculated the size of each grid cell and used that to scale the trees correctly. By adjusting the scaleFactor in the function, I made sure the trees would fit within the cells and not overflow.
+I carefully calculated the size of each grid cell and used that to scale the trees correctly. By adjusting the scaleFactor in the function, I made sure the trees would fit within the cells and not overflow. I also searched from https://p5js.org/reference/p5/triangle to figure out to create triangle.
