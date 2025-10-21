@@ -2,6 +2,9 @@
 ## What I made
 In this project, I created a visual object that looks like a tree. In Phase 1, I drew the tree on graph paper. In Phase 2, I translated the drawing into code using P5.js. Then, in Phase 3, I created a function to draw the tree, making it easier to reuse and adjust. Finally, in Phase 4, I tiled the tree objects across the canvas in a grid and made sure the trees fit properly in the grid cells.
 
+![Phase1](https://github.com/user-attachments/assets/9b9a21bb-5327-4cb1-b9f3-002825ef82ea)
+
+
 ## How I made it
 Phase 1: I started by drawing the tree on iPad drawing app. The tree was made up of three triangles and a rectangle.
 
