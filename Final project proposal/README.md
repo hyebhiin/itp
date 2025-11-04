@@ -1,9 +1,11 @@
 
-#Squid game-Room 456
+# Squid game-Room 456
 
 ### Sentence Overview
 I will use A-Frame to create a 3D version of the Squid Game symbols (○ △ □) and place them inside a pink maze-like space.
 The colors and lights in the scene will change to express tension and symbolism, creating an interactive web-based artwork.
+<img width="804" height="470" alt="Screenshot 2025-11-04 at 12 49 44 AM" src="https://github.com/user-attachments/assets/c260fe9e-27ae-4652-9c2f-497e7a24aebb" />
+<img width="454" height="240" alt="Screenshot 2025-11-04 at 12 47 07 AM" src="https://github.com/user-attachments/assets/008d0bca-fe31-4b4d-8d9b-2a7dfc1eb5eb" />
 
 ### SPECIFIC resources you know you will use in developing your project! With Hyperlinks! Not "Rachel's Class Repository!" Not ChatGPT! Not "YouTube"!
 https://aframe.io/docs/1.7.0/introduction/ — Building and animating 3D scenes directly in HTML.
