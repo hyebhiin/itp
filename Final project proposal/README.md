@@ -1,9 +1,11 @@
 
-#Squid game-Room 456
+# Squid game-Room 456
 
 ### Sentence Overview
 I will use A-Frame to create a 3D version of the Squid Game symbols (○ △ □) and place them inside a pink maze-like space.
 The colors and lights in the scene will change to express tension and symbolism, creating an interactive web-based artwork.
+<img width="804" height="470" alt="Screenshot 2025-11-04 at 12 49 44 AM" src="https://github.com/user-attachments/assets/c260fe9e-27ae-4652-9c2f-497e7a24aebb" />
+<img width="454" height="240" alt="Screenshot 2025-11-04 at 12 47 07 AM" src="https://github.com/user-attachments/assets/008d0bca-fe31-4b4d-8d9b-2a7dfc1eb5eb" />
 
 ### SPECIFIC resources you know you will use in developing your project! With Hyperlinks! Not "Rachel's Class Repository!" Not ChatGPT! Not "YouTube"!
 https://aframe.io/docs/1.7.0/introduction/ — Building and animating 3D scenes directly in HTML.
@@ -34,7 +36,7 @@ It is an independent project created only for LMSC-261.
 -The finished project is published online through GitHub Pages for public access.
 
 
-##Outline of steps 
+## Outline of steps 
 Week 1 (Nov 4 – Nov 10) I will set up my project and plan the design. I will create a simple A-Frame scene and test if it runs correctly in the browser. Then I will sketch where to place the circle, triangle, and square in the space and decide on the pink color palette and lighting style for the maze background.
 Week 2 (Nov 11 – Nov 17) I will start building the 3D models and lights. I will add the circle, triangle, and square using A-Frame elements and set up ambient and directional lighting. I will also adjust the camera position and background color to match the pink tone.
 Week 3 (Nov 18 – Nov 24) I will focus on interactivity and animation. I will make each shape rotate or change color when clicked and test the A-Frame animation components. I will also check that the camera movement and scene navigation feel smooth.
