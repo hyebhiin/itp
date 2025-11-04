@@ -36,7 +36,7 @@ It is an independent project created only for LMSC-261.
 -The finished project is published online through GitHub Pages for public access.
 
 
-##Outline of steps 
+## Outline of steps 
 Week 1 (Nov 4 – Nov 10) I will set up my project and plan the design. I will create a simple A-Frame scene and test if it runs correctly in the browser. Then I will sketch where to place the circle, triangle, and square in the space and decide on the pink color palette and lighting style for the maze background.
 Week 2 (Nov 11 – Nov 17) I will start building the 3D models and lights. I will add the circle, triangle, and square using A-Frame elements and set up ambient and directional lighting. I will also adjust the camera position and background color to match the pink tone.
 Week 3 (Nov 18 – Nov 24) I will focus on interactivity and animation. I will make each shape rotate or change color when clicked and test the A-Frame animation components. I will also check that the camera movement and scene navigation feel smooth.
