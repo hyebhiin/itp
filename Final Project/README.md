@@ -4,7 +4,7 @@
 ### What I Did
 For this project, I created an interactive 3D web scene using A-Frame, inspired by the visual atmosphere of Squid Game.
 The main goal was to design a moment-based experience where nothing happens at first, and the entire scene “activates” only when the user interacts with it.
-<img width="1051" height="605" alt="Screenshot 2025-12-09 at 1 15 27 AM" src="https://github.com/user-attachments/assets/974e80ba-735c-4881-90b9-63ae41b5af2a" />
+<img width="1033" height="530" alt="Screenshot 2025-12-09 at 7 52 17 AM" src="https://github.com/user-attachments/assets/3343c10f-780f-4806-a1a9-47c3c96653c2" />
 
 When the user clicks anywhere on the screen, several elements appear and animate together:
 
@@ -83,17 +83,18 @@ This deliberate pacing and mood design is what elevates the final result beyond 
 his project ended up having way more debugging moments than I expected. A lot of them came from very small mistakes that were surprisingly hard to catch while working inside A-Frame. Here are the main issues I ran into:
 
 1. The logo kept getting stretched or squished horizontally
+<img width="1051" height="605" alt="Screenshot 2025-12-09 at 1 15 27 AM" src="https://github.com/user-attachments/assets/73281db8-de74-41bf-97de-dfbfa13a034e" />
 
 At first, I tried drawing the circle, triangle, and square directly in A-Frame using <a-circle>, <a-triangle>, and <a-plane>.
 But every time I placed them inside my scene, A-Frame kept scaling them in weird ways depending on the camera angle. The triangle especially kept warping or stretching. The shapes never looked like the clean, simple Squid Game symbols they were supposed to be.
-![Screenshot 2025 12 09 At 1.15.27 AM](../../../../Desktop/Screenshot%202025-12-09%20at%201.15.27 AM.png)
+
 I tried adjusting width, height, scale, and even camera FOV, but every fix just broke something else.
 Eventually, I realized that the easiest way was simply using one PNG image rather than manually building the shapes with geometry.
 
 2. The logo image kept showing up twice
+<img width="939" height="544" alt="Screenshot 2025-12-09 at 4 41 34 AM" src="https://github.com/user-attachments/assets/10f53cc5-1cb8-4e5a-ae89-17007dd86d22" />
 
 This issue took me a long time to figure out because the duplication wasn't obvious in the code.
-
 Turns out:
 I had accidentally pasted the <a-entity id="logo">...</a-entity> block two times—once inside the <a-scene> and once outside of it.
 When A-Frame rendered the page, both appeared on top of each other, slightly different sizes, which made everything look distorted and glitchy.
@@ -101,16 +102,14 @@ When A-Frame rendered the page, both appeared on top of each other, slightly dif
 Once I deleted the second copy, the duplication disappeared.
 
 3. The logo PNG kept appearing distorted or at the wrong aspect ratio
+<img width="2048" height="1123" alt="Screenshot 2025-12-09 at 5 14 10 AM" src="https://github.com/user-attachments/assets/d37c506c-ce33-44e7-ba4c-57a5bcd27fe1" />
 
 Even after switching to the PNG, the logo looked too wide, too short, or compressed.
 This happened because <a-image> and <a-entity geometry="plane"> handle aspect ratio differently.
 
 A-Frame doesn’t automatically preserve an image’s natural proportions, so if I set width and height manually, it almost always distorted the original image.
-![Screenshot 2025 12 09 At 7.43.27 AM](/var/folders/cv/zgtk58754lz18d9tv03yqt300000gn/T/TemporaryItems/NSIRD_screencaptureui_j4TgNm/Screenshot%202025-12-09%20at%207.43.27 AM.png)
 The fix was:
-
 geometry="primitive: plane; width: 4.5; height: 1.7"
-
 
 I manually matched the JPG’s real aspect ratio until it visually looked correct. It took trial-and-error because I couldn't extract the PNG's exact dimensions inside A-Frame.
 
@@ -136,21 +135,7 @@ OR overlaying a colored plane behind the image (I chose opacity first)
 Once I switched to:
 
 animation__blink="property: material.opacity; from: 1; to: 0.2; dur: 800; dir: alternate; loop: true"
-
-
-…the flicker finally worked.
-
-7. The background image first appeared extremely blurry
-
-I assumed the JPG quality was low, but it turned out A-Frame scales sky textures unevenly depending on the camera orientation.
-
-I fixed this by:
-
-switching to a higher-resolution JPG
-
-ensuring the camera wasn't positioned too close to the sky dome
-
-turning the image upright (it was flipped at one point)
+the flicker finally worked.
 
 
 ## Outro
