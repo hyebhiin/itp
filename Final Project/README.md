@@ -25,21 +25,21 @@ My goal was to recreate a similar contrast — a quiet, empty beginning followed
 
 
 
-### How I did it
-1. Setting Up the Base A-Frame Scene
+## How I did it
+### Setting Up the Base A-Frame Scene
 
 I started by setting up a basic A-Frame scene with a background sky texture and a camera.
 The sky element wraps around the user to create a full 360° environment.
 
 <a-sky src="background-image.jpg"></a-sky>
 
-2. Hiding the Logo Until the First Interaction
+### Hiding the Logo Until the First Interaction
 
 The Squid Game logo is rendered as a plane geometry.
 It starts fully hidden (visible="false" and opacity: 0) so the scene initially feels empty and still.
 This creates a strong contrast for the interactive moment.
 
-3. Triggering All Animations on Click
+### Triggering All Animations on Click
 
 I attached a click event to the entire scene using JavaScript.
 When the user clicks, multiple animations activate at the same time:
@@ -56,13 +56,13 @@ The camera starts floating slowly to give the scene a breathing effect
 
 This synchronized activation creates a sense of awakening — the moment the user interacts, the space becomes alive.
 
-4. Integrating Sound
+### Integrating Sound
 
 For the audio, I used A-Frame’s <a-sound> component.
 The track only starts playing after the user clicks, which reinforces the contrast between the silent opening and the activated state.
 The sound choice matches the mysterious, ritual-like feeling I wanted to convey.
 
-5. Creating an "Outstanding" Style Through Atmosphere
+### Creating an "Outstanding" Style Through Atmosphere
 
 Instead of building a complex 3D environment, I focused on atmosphere and pacing.
 Much like IBI, this project uses minimal elements but arranges them in a way that feels intentional:
@@ -79,10 +79,10 @@ By combining these effects, the project creates the sense that the world was dor
 This deliberate pacing and mood design is what elevates the final result beyond a simple A-Frame demo.
 
 
-### Problems I Faced & How did I overcame them
+## Problems I Faced & How did I overcame them
 his project ended up having way more debugging moments than I expected. A lot of them came from very small mistakes that were surprisingly hard to catch while working inside A-Frame. Here are the main issues I ran into:
 
-1. The logo kept getting stretched or squished horizontally
+### The logo kept getting stretched or squished horizontally
 <img width="1051" height="605" alt="Screenshot 2025-12-09 at 1 15 27 AM" src="https://github.com/user-attachments/assets/73281db8-de74-41bf-97de-dfbfa13a034e" />
 
 At first, I tried drawing the circle, triangle, and square directly in A-Frame using <a-circle>, <a-triangle>, and <a-plane>.
@@ -91,7 +91,7 @@ But every time I placed them inside my scene, A-Frame kept scaling them in weird
 I tried adjusting width, height, scale, and even camera FOV, but every fix just broke something else.
 Eventually, I realized that the easiest way was simply using one PNG image rather than manually building the shapes with geometry.
 
-2. The logo image kept showing up twice
+### The logo image kept showing up twice
 <img width="939" height="544" alt="Screenshot 2025-12-09 at 4 41 34 AM" src="https://github.com/user-attachments/assets/10f53cc5-1cb8-4e5a-ae89-17007dd86d22" />
 
 This issue took me a long time to figure out because the duplication wasn't obvious in the code.
@@ -101,7 +101,7 @@ When A-Frame rendered the page, both appeared on top of each other, slightly dif
 
 Once I deleted the second copy, the duplication disappeared.
 
-3. The logo PNG kept appearing distorted or at the wrong aspect ratio
+### The logo PNG kept appearing distorted or at the wrong aspect ratio
 <img width="2048" height="1123" alt="Screenshot 2025-12-09 at 5 14 10 AM" src="https://github.com/user-attachments/assets/d37c506c-ce33-44e7-ba4c-57a5bcd27fe1" />
 
 Even after switching to the PNG, the logo looked too wide, too short, or compressed.
@@ -113,7 +113,7 @@ geometry="primitive: plane; width: 4.5; height: 1.7"
 
 I manually matched the JPG’s real aspect ratio until it visually looked correct. It took trial-and-error because I couldn't extract the PNG's exact dimensions inside A-Frame.
 
-4. The blinking animation didn’t work at all
+### The blinking animation didn’t work at all
 
 The first time I tried to make the logo flicker between black and white, literally nothing happened.
 It just stayed black. No blinking. No animation.
