@@ -2,49 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Squid Game Logo Interaction</title>
+  <title>Squid Game Background with Logo</title>
   <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
 </head>
 <body>
 
   <a-scene cursor="rayOrigin: mouse">
-    <a-sky color="#FFFFFF"></a-sky>
 
-    <!-- 로고 이미지 -->
+    <!-- 🔥 배경 이미지 -->
+    <a-sky 
+      src="https://raw.githubusercontent.com/hyebhiin/itp/main/Final%20project%20proposal/background%20image.png">
+    </a-sky>
+
+    <!-- 🔥 오징어 게임 로고 -->
     <a-image 
       id="logo"
       src="https://raw.githubusercontent.com/hyebhiin/itp/main/Final%20project%20proposal/squid%20game%20logo.png"
-      position="0 1.5 -4"
+      position="0 1.5 -3"
       width="6"
       height="3">
     </a-image>
 
-    <!-- 계단 이미지 (처음에는 숨김) -->
-    <a-image
-      id="stairs"
-      src="https://raw.githubusercontent.com/hyebhiin/itp/main/Final%20project%20proposal/stairs.png"
-      position="0 0.2 -4"
-      width="6"
-      height="3"
-      visible="false">
-    </a-image>
-
-    <!-- 클릭 인식용 카메라 + 커서 -->
-    <a-camera>
+    <a-camera position="0 1.6 0">
       <a-cursor></a-cursor>
     </a-camera>
 
   </a-scene>
-
-  <script>
-    const logo = document.querySelector("#logo");
-    const stairs = document.querySelector("#stairs");
-
-    logo.addEventListener("click", (e) => {
-      console.log("LOGO CLICKED");
-      stairs.setAttribute("visible", true);
-    });
-  </script>
 
 </body>
 </html>
