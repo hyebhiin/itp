@@ -80,7 +80,7 @@ This deliberate pacing and mood design is what elevates the final result beyond 
 
 
 ## Problems I Faced & How did I overcame them
-his project ended up having way more debugging moments than I expected. A lot of them came from very small mistakes that were surprisingly hard to catch while working inside A-Frame. Here are the main issues I ran into:
+This project ended up having way more debugging moments than I expected. A lot of them came from very small mistakes that were surprisingly hard to catch while working inside A-Frame. Here are the main issues I ran into:
 
 ### The logo kept getting stretched or squished horizontally
 <img width="1051" height="605" alt="Screenshot 2025-12-09 at 1 15 27 AM" src="https://github.com/user-attachments/assets/73281db8-de74-41bf-97de-dfbfa13a034e" />
