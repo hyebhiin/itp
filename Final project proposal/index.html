@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Squid Game Logo</title>
+  <title>Squid Game Logo with Sound</title>
   <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
 </head>
 <body>
@@ -10,7 +10,16 @@
   <a-scene>
     <a-sky color="#FFFFFF"></a-sky>
 
+    <!-- 사운드 -->
+    <a-sound 
+      id="clickSound" 
+      src="https://raw.githubusercontent.com/hyebhiin/itp/main/Final%20project%20proposal/click.mp3" 
+      autoplay="false">
+    </a-sound>
+
+    <!-- 로고 이미지 -->
     <a-image 
+      id="logo"
       src="https://raw.githubusercontent.com/hyebhiin/itp/main/Final%20project%20proposal/squid%20game%20logo.png"
       position="0 1.5 -4"
       width="6"
@@ -20,15 +29,14 @@
     <a-camera position="0 1.6 0"></a-camera>
   </a-scene>
 
+  <script>
+    const logo = document.querySelector('#logo');
+    const sound = document.querySelector('#clickSound');
+
+    logo.addEventListener('click', () => {
+      sound.components.sound.playSound();
+    });
+  </script>
+
 </body>
 </html>
-
-<a-sound id="sound1" src="src: click.mp3" autoplay="false"></a-sound>
-
-<a-image 
-  id="logo"
-  src="https://raw.githubusercontent.com/hyebhiin/itp/main/Final%20project%20proposal/squid%20game%20logo.png"
-  position="0 1.5 -4"
-  width="6"
-  height="3">
-</a-image>
