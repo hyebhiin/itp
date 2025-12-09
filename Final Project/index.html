@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Squid Game Scene</title>
+  <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+</head>
+<body>
+
+<a-scene cursor="rayOrigin: mouse">
+
+  <!-- 🌄 배경 이미지 -->
+  <a-sky src="https://raw.githubusercontent.com/hyebhiin/itp/main/Final%20project%20proposal/squid-game-stairs-3d-model-76bc4b51d3.jpg"></a-sky>
+
+  <!-- 🔊 음악 (클릭 전까지 재생 안 함) -->
+  <a-sound id="bgSound"
+    src="https://raw.githubusercontent.com/hyebhiin/itp/main/Final%20project%20proposal/%EC%98%A4%EC%A7%95%EC%96%B4%EA%B2%8C%EC%9E%84-%EB%B2%A8%EC%86%8C%EB%A6%AC%EB%AC%B4%EA%B6%81%ED%99%94-%EA%BD%83%EC%9D%B4-%ED%94%BC%EC%97%88%EC%8A%B5%EB%8B%88%EB%8B%A4-song.mp3"
+    autoplay="false">
+  </a-sound>
+
+  <!-- 🎬 로고 (처음에는 숨김 + PNG 원본 비율 그대로: 1:1) -->
+  <a-entity 
+    id="logo"
+    geometry="primitive: plane; width: 3; height: 3"
+    material="
+      shader: flat;
+      src: https://raw.githubusercontent.com/hyebhiin/itp/main/Final%20project%20proposal/squid%20game%20logo.png;
+      transparent: true;
+      opacity: 0;
+    "
+    position="0 1.4 -3"
+    rotation="0 0 0"
+    visible="false">
+  </a-entity>
+
+  <!-- 📷 카메라 + 커서 -->
+  <a-camera position="0 1.6 0">
+    <a-cursor></a-cursor>
+  </a-camera>
+
+</a-scene>
+
+<script>
+  const scene = document.querySelector("a-scene");
+  const logo = document.querySelector("#logo");
+  const sound = document.querySelector("#bgSound");
+
+  scene.addEventListener("click", () => {
+
+    if (!logo.getAttribute("visible")) {
+
+      logo.setAttribute("visible", true);
+
+      logo.setAttribute("animation__fade", {
+        property: "material.opacity",
+        from: 0,
+        to: 1,
+        dur: 900,
+        easing: "easeOutQuad"
+      });
+
+      // 🔥 크기 깜빡임 (확실하게 보이도록 강화)
+      logo.setAttribute("animation__glow", {
+        property: "scale",
+        from: "1 1 1",
+        to: "1.25 1.25 1",
+        dur: 700,
+        dir: "alternate",
+        loop: true
+      });
+
+      // 🔥 밝기 깜빡임
+      logo.setAttribute("animation__blink", {
+        property: "material.opacity",
+        from: 1,
+        to: 0.4,
+        dur: 700,
+        dir: "alternate",
+        loop: true
+      });
+
+      sound.components.sound.playSound();
+    }
+  });
+</script>
+
+
+</body>
+</html>

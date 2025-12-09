@@ -2,24 +2,136 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Squid Game Logo</title>
+  <title>Outstanding Style Squid Game Scene</title>
   <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
 </head>
 <body>
 
-  <a-scene>
-    <a-sky color="#FFFFFF"></a-sky>
+<a-scene cursor="rayOrigin: mouse">
 
-    <!-- 오징어 게임 로고 이미지 -->
-    <a-image 
-      src="https://github.com/hyebhiin/itp/blob/main/Final%20project%20proposal/squid%20game%20logo.png?raw=true"
-      position="0 1.5 -4"
-      width="6"
-      height="3">
-    </a-image>
+  <!-- 🌄 배경 -->
+  <a-sky src="https://raw.githubusercontent.com/hyebhiin/itp/main/Final%20project%20proposal/squid-game-stairs-3d-model-76bc4b51d3.jpg"></a-sky>
 
-    <a-camera position="0 1.6 0"></a-camera>
-  </a-scene>
+  <!-- 💡 Ambient Light (클릭 후 활성화됨) -->
+  <a-entity id="ambientLight"
+    light="type: ambient; color: #ffffff; intensity: 0.6">
+  </a-entity>
+
+  <!-- 🔦 Directional Light (영역에 깊이 부여) -->
+  <a-entity id="directionalLight"
+    light="type: directional; color: #ffd0e8; intensity: 0.1"
+    position="0 2 -2">
+  </a-entity>
+
+  <!-- 🔊 음악 -->
+  <a-sound id="bgSound"
+    src="https://raw.githubusercontent.com/hyebhiin/itp/main/Final%20project%20proposal/%EC%98%A4%EC%A7%95%EC%96%B4%EA%B2%8C%EC%9E%84-%EB%B2%A8%EC%86%8C%EB%A6%AC%EB%AC%B4%EA%B6%81%ED%99%94-%EA%BD%83%EC%9D%B4-%ED%94%BC%EC%97%88%EC%8A%B5%EB%8B%88%EB%8B%A4-song.mp3"
+    autoplay="false">
+  </a-sound>
+
+  <!-- 🎬 로고 (처음 숨김) — PNG 원본 비율 1:1 -->
+  <a-entity 
+    id="logo"
+    geometry="primitive: plane; width: 3; height: 3"
+    material="
+      shader: flat;
+      src: https://raw.githubusercontent.com/hyebhiin/itp/main/Final%20project%20proposal/squid%20game%20logo.png;
+      transparent: true;
+      opacity: 0;
+    "
+    position="0 1.4 -3"
+    visible="false">
+  </a-entity>
+
+  <!-- 📷 카메라 -->
+  <a-camera id="camera" position="0 1.6 0">
+    <a-cursor></a-cursor>
+  </a-camera>
+
+</a-scene>
+
+<script>
+  const scene = document.querySelector("a-scene");
+  const logo = document.querySelector("#logo");
+  const sound = document.querySelector("#bgSound");
+  const camera = document.querySelector("#camera");
+  const ambientLight = document.querySelector("#ambientLight");
+  const directionalLight = document.querySelector("#directionalLight");
+
+  let started = false;
+
+  scene.addEventListener("click", () => {
+    if (started) return;
+    started = true;
+
+    // 로고 나타남
+    logo.setAttribute("visible", true);
+    logo.setAttribute("animation__fade", {
+      property: "material.opacity",
+      from: 0,
+      to: 1,
+      dur: 1200,
+      easing: "easeOutQuad"
+    });
+
+    // 🔥 로고 “심장박동 느낌” pulsation
+    logo.setAttribute("animation__pulse", {
+      property: "scale",
+      from: "1 1 1",
+      to: "1.2 1.2 1",
+      dir: "alternate",
+      loop: true,
+      dur: 900,
+      easing: "easeInOutSine"
+    });
+
+    // 🔥 로고 opacity 깜빡임 (빛 반짝)
+    logo.setAttribute("animation__blink", {
+      property: "material.opacity",
+      from: 1,
+      to: 0.6,
+      dir: "alternate",
+      loop: true,
+      dur: 700
+    });
+
+    // 🎵 음악 재생
+    sound.components.sound.playSound();
+
+    // 🌫 ambient light breathing (ibi 스타일 subtle shift)
+    ambientLight.setAttribute("animation__lightshift", {
+      property: "light.intensity",
+      from: 0.6,
+      to: 1.0,
+      dir: "alternate",
+      loop: true,
+      dur: 4000,
+      easing: "easeInOutSine"
+    });
+
+    // 🔦 directional light color shift
+    directionalLight.setAttribute("animation__colorshift", {
+      property: "light.color",
+      from: "#ffd0e8",
+      to: "#ff99cc",
+      dir: "alternate",
+      loop: true,
+      dur: 5000
+    });
+
+    // 📷 카메라 부드러운 float (공간이 숨 쉬는 느낌)
+    camera.setAttribute("animation__float", {
+      property: "position",
+      from: "0 1.6 0",
+      to: "0 1.63 0",
+      dir: "alternate",
+      loop: true,
+      dur: 3000,
+      easing: "easeInOutSine"
+    });
+
+  });
+</script>
 
 </body>
 </html>
