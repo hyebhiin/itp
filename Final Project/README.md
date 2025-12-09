@@ -4,7 +4,8 @@
 ### What I Did
 For this project, I created an interactive 3D web scene using A-Frame, inspired by the visual atmosphere of Squid Game.
 The main goal was to design a moment-based experience where nothing happens at first, and the entire scene “activates” only when the user interacts with it.
-![Screenshot 2025 12 09 At 7.37.33 AM](/var/folders/cv/zgtk58754lz18d9tv03yqt300000gn/T/TemporaryItems/NSIRD_screencaptureui_LogRfE/Screenshot%202025-12-09%20at%207.37.33 AM.png)
+<img width="1051" height="605" alt="Screenshot 2025-12-09 at 1 15 27 AM" src="https://github.com/user-attachments/assets/974e80ba-735c-4881-90b9-63ae41b5af2a" />
+
 When the user clicks anywhere on the screen, several elements appear and animate together:
 
 The Squid Game logo fades into view
