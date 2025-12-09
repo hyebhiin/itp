@@ -24,7 +24,7 @@ My goal was to recreate a similar contrast — a quiet, empty beginning followed
 
 
 
-###How I did it
+### How I did it
 1. Setting Up the Base A-Frame Scene
 
 I started by setting up a basic A-Frame scene with a background sky texture and a camera.
@@ -78,7 +78,7 @@ By combining these effects, the project creates the sense that the world was dor
 This deliberate pacing and mood design is what elevates the final result beyond a simple A-Frame demo.
 
 
-###Problems I Faced & How did I overcame them
+### Problems I Faced & How did I overcame them
 his project ended up having way more debugging moments than I expected. A lot of them came from very small mistakes that were surprisingly hard to catch while working inside A-Frame. Here are the main issues I ran into:
 
 1. The logo kept getting stretched or squished horizontally
