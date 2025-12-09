@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Squid Game Background with Logo</title>
+  <title>Squid Game Logo Scene</title>
   <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
 </head>
 <body>
@@ -10,18 +10,18 @@
   <a-scene cursor="rayOrigin: mouse">
 
     <!-- 🔥 배경 이미지 -->
-    <a-sky 
-      src="https://raw.githubusercontent.com/hyebhiin/itp/main/Final%20project%20proposal/background%20image.png">
-    </a-sky>
+    <a-sky src="https://raw.githubusercontent.com/hyebhiin/itp/main/Final%20project%20proposal/background%20image.png"></a-sky>
 
-    <!-- 🔥 오징어 게임 로고 -->
-    <a-image 
+    <!-- 🔥 찌그러지지 않는 로고 (plane geometry 사용) -->
+    <a-entity 
       id="logo"
-      src="https://raw.githubusercontent.com/hyebhiin/itp/main/Final%20project%20proposal/squid%20game%20logo.png"
-      position="0 1.5 -3"
-      width="6"
-      height="3">
-    </a-image>
+      geometry="primitive: plane; width: 4; height: 1.9"
+      material="shader: flat; 
+                src: https://raw.githubusercontent.com/hyebhiin/itp/main/Final%20project%20proposal/squid%20game%20logo.png; 
+                transparent: true"
+      position="0 1.5 -4"
+      rotation="0 0 0">
+    </a-entity>
 
     <a-camera position="0 1.6 0">
       <a-cursor></a-cursor>
