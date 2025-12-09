@@ -11,9 +11,9 @@
   <!-- Background -->
   <a-sky src="https://raw.githubusercontent.com/hyebhiin/itp/main/Final%20Project/squid-game-stairs-3d-model-76bc4b51d3.jpg"></a-sky>
 
-  <!-- Music -->
+  <!-- Music (raw mp3 link) -->
   <a-sound id="bgSound"
-    src="https://raw.githubusercontent.com/hyebhiin/itp/main/Final%20project%20proposal/%EC%98%A4%EC%A7%95%EC%96%B4%EA%B2%8C%EC%9E%84-%EB%B2%A8%EC%86%8C%EB%A6%AC%EB%AC%B4%EA%B6%81%ED%99%94-%EA%BD%83%EC%9D%B4-%ED%94%BC%EC%97%88%EC%8A%B5%EB%8B%88%EB%8B%A4-song.mp3"
+    src="https://raw.githubusercontent.com/hyebhiin/itp/main/Final%20Project/squid%20game.mp3"
     autoplay="false">
   </a-sound>
 
@@ -29,10 +29,10 @@
     "
     position="0 1.4 -3"
     rotation="0 0 0"
-    visible="false">
+    visible="false"
+    class="clickable">
   </a-entity>
 
-  <!-- Camera -->
   <a-camera position="0 1.6 0">
     <a-cursor></a-cursor>
   </a-camera>
@@ -40,17 +40,14 @@
 </a-scene>
 
 <script>
-  const scene = document.querySelector("a-scene");
   const logo = document.querySelector("#logo");
   const sound = document.querySelector("#bgSound");
 
-  scene.addEventListener("click", () => {
-
+  // 첫 클릭 → 로고 등장
+  document.querySelector("a-scene").addEventListener("click", () => {
     if (!logo.getAttribute("visible")) {
-
       logo.setAttribute("visible", true);
 
-      // Fade-in
       logo.setAttribute("animation__fade", {
         property: "material.opacity",
         from: 0,
@@ -59,7 +56,6 @@
         easing: "easeOutQuad"
       });
 
-      // Scale pulsing
       logo.setAttribute("animation__glow", {
         property: "scale",
         from: "1 1 1",
@@ -69,7 +65,6 @@
         loop: true
       });
 
-      // Opacity blinking
       logo.setAttribute("animation__blink", {
         property: "material.opacity",
         from: 1,
@@ -78,9 +73,12 @@
         dir: "alternate",
         loop: true
       });
-
-      sound.components.sound.playSound();
     }
+  });
+
+  // 로고 클릭 → 음악 재생
+  logo.addEventListener("click", () => {
+    sound.components.sound.playSound();
   });
 </script>
 
